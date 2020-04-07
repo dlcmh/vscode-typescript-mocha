@@ -47,6 +47,7 @@ export class Stack<T> {
    * @returns {boolean} true if the stack is empty.
    */
   isEmpty(): boolean {
+    throw new Error("Something went wrong");
     return this._items.length === 0;
   }
 
