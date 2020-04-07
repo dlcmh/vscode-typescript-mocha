@@ -25,6 +25,28 @@
       ],
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha Test on current TS file",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--require",
+        "ts-node/register",
+        "-u",
+
+        // https://stackoverflow.com/questions/55283725/unit-test-mocha-visual-studio-code-describe-is-not-defined
+        // "tdd",
+        "bdd",
+
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/tests/unit/${fileBasenameNoExtension}.ts"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
